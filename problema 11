@@ -1,0 +1,23 @@
+class Solution(object):
+   def subsets(self, nums):
+      temp_result = []
+      self.subsets_util(nums,[0 for i in range(len(nums))],temp_result,0)
+      main_result = []
+      for lists in temp_result:
+         temp = []
+         for i in range(len(lists)):
+            if lists[i] == 1:
+               temp.append(nums[i])
+         main_result.append(temp)
+      return main_result
+   def subsets_util(self,nums,temp,result,index):
+      if index == len(nums):
+         result.append([i for i in temp])
+         #print(temp)
+         return
+      temp[index] = 0
+      self.subsets_util(nums,temp,result,index+1)
+      temp[index] = 1
+      self.subsets_util(nums, temp, result,index + 1)
+ob1 = Solution()
+print(ob1.subsets(['A','B','C','D']))

@@ -1,0 +1,6 @@
+A=set(map(str,input("Dati valorile mulțimii A :").split()))
+B=set(map(str,input("Dati valorile mulțimii B :").split()))
+print('Intersectia multimilor :',A.intersection(B))
+print('Reuniunea multimilor :',A.union(B))
+print('Diferenta multimilor A/B :',A.difference(B))
+print('Intersectia multimilor B/A :',B.difference(A))
